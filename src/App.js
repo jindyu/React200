@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import ArrowFunc from './R0013_ArrowFunction';
+import ForceUpdate from './2_Notice/R026_ForceUpdate';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
       <p>CSS 적용하기</p>
-      <ArrowFunc/>
+      <ForceUpdate />
     </div>
   );
 }
