@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { debounce } from 'lodash'
+import { throttle } from 'lodash'
 
 class R095_reactThrottle extends Component {    
 
-    throttleFunc = debounce(() => {
+    throttleFunc = throttle(() => {
         console.log('Throttle API Call')
     }, 1000)
 
