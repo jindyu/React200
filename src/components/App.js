@@ -11,6 +11,7 @@ import ReactProxy from './R109_reactProxy'
 import ApiGetJson from './R110_ApiGetJson'
 import ApiPostJson from './R111_ApiPostJson'
 import FloatingPopulationList from './Floating_population/R096_floatingPopulationList'
+import SoftwareList from './SoftwareToolsManage/R126_SoftwareList'
 
 // function App() {
 class App extends Component{
@@ -26,6 +27,7 @@ class App extends Component{
           <Route exact path='/ReactProxy' element={<ReactProxy />} />
           <Route exact path='/ApiGetJson' element={<ApiGetJson />} />
           <Route exact path='/ApiPostJson' element={<ApiPostJson />} />
+          <Route exact path='/SoftwareList' element={<SoftwareList />} />
         </Routes>
         <Footer />
       </div>
