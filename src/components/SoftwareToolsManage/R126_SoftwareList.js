@@ -20,8 +20,6 @@ class R126_SoftwareList extends Component {
         axios.post('/api/Swtool?type=list', {
         })
         .then(response => {
-            alert('응답은 있네요')
-
             try {
                 this.setState({ responseSwtoolList: response })
                 this.setState({
@@ -31,7 +29,7 @@ class R126_SoftwareList extends Component {
                 alert('작업 중 에러가 발생했습니다')
             }
         })
-        .catch( error => {alert('작업 중 에러가 발생했습니다2'); return false })
+        .catch( error => {alert('작업 중 에러가 발생했습니다2\n' + error); return false })
     }
 
     SwToolListAppend = () => {
@@ -52,7 +50,7 @@ class R126_SoftwareList extends Component {
                     <td>{data.swt_function}</td>
                     <td>{reg_date}</td>
                     <td>
-                        <Link to={'AdminSoftwareView/' + data.swt_code} className="bt_c1 bt_c2 w50_b">수정</Link>
+                        <Link to={'/SoftwareView/' + data.swt_code} className="bt_c1 bt_c2 w50_b">수정</Link>
                         <a href="#n" className="bt_c1 w50_b">삭제</a>
                     </td>
                 </tr>
@@ -70,23 +68,21 @@ class R126_SoftwareList extends Component {
                     <div className="li_top">
                         <h2 className="s_tit1">Software Tools 목록</h2>
                         <div className="li_top_sch af">
-                            <Link to={'/AdminSoftwareView/register'} className="sch_bt2 wi_au">Tool 등록</Link>
+                            <Link to={'/SoftwareView/register'} className="sch_bt2 wi_au">Tool 등록</Link>
                         </div>
                     </div>
                     <div className="list_cont list_cont_admin">
                         <table className="table_ty1 ad_tlist">
-                            <thead>
-                                <tr>
-                                    <th>툴 이름</th>
-                                    <th>기능</th>
-                                    <th>등록일</th>
-                                    <th>기능</th>
-                                </tr>
-                            </thead>
-                            <tbody className="table_ty2 ad_tlist">
-                                {this.state.append_SwtoolList}
-                            </tbody>
+                            <tr>
+                                <th>툴 이름</th>
+                                <th>기능</th>
+                                <th>등록일</th>
+                                <th>기능</th>
+                            </tr>
                         </table>
+                        <table className="table_ty2 ad_tlist">
+                            {this.state.append_SwtoolList}
+                        </table>                        
                     </div>
                 </article>
             </section>
